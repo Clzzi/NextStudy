@@ -1,8 +1,22 @@
 import axios from "axios";
+import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
+import { Loader } from "semantic-ui-react";
 import Item from "../../src/components/Item";
 
 const Post = ({ item }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <div stlye={{ padding: "100px 0" }}>
+        <Loader active inline="centered">
+          loading
+        </Loader>
+      </div>
+    );
+  }
+
   return (
     <>
       {item && (
@@ -21,8 +35,15 @@ const Post = ({ item }) => {
 export default Post;
 
 export const getStaticPaths = async () => {
+  const apiUrl = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline`;
+  const res = await axios.get(apiUrl);
+  const data = res.data;
+
   return {
-    paths: [{ params: { id: "495" } }],
+    // paths: [{ params: { id: "495" } }],
+    path: data.slice(0, 9).map((item) => ({
+      params: { id: item.id.toString() },
+    })),
     fallback: true,
   };
 };
