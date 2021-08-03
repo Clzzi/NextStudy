@@ -9,7 +9,7 @@ const ItemList = ({ lists }) => {
         <Grid.Row>
           {lists.map((list, i) => (
             <Grid.Column key={i}>
-              <Link as={`/view/${list.id}`} href="/view/[id]">
+              <Link as={`/detail/${list.id}`} href="/detail/[id]">
                 <a>
                   <div className={styles.wrap}>
                     <img
