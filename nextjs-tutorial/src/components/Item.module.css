@@ -8,7 +8,7 @@
 .img_item {
   flex: 200px 0 0;
 }
-.img_item img {
+.img_item {
   display: block;
 }
 

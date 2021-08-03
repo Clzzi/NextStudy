@@ -28,6 +28,11 @@ const Gnb = () => {
         active={activeItem === "about"}
         onClick={goLink}
       />
+      <Menu.Item
+        name="Contact Us"
+        active={activeItem === "contact"}
+        onClick={goLink}
+      />
     </Menu>
   );
 };

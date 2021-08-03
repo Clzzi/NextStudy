@@ -7,8 +7,7 @@ import ItemList from "../src/components/ItemList";
 export default function Home() {
   const [lists, setLists] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const API_URL =
-    "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+  const API_URL = 'http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline';
 
   const getData = () => {
     axios.get(API_URL).then((res) => {
@@ -20,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [API_URL]);
 
   return (
     <div>
