@@ -11,7 +11,7 @@ const Card = (CardProps: CardProps): JSX.Element => {
     <div className={cx.Card}>
       <div className={cx.Top}>
         <div className={cx.Title}>{CardProps.title}</div>
-        {CardProps && (
+        {CardProps.subTitle && (
           <div className={cx.SubTitle}>( {CardProps.subTitle} )</div>
         )}
       </div>

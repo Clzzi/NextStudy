@@ -1,7 +1,7 @@
-import Button from "components/Button";
 import Card from "components/Card";
 import Title from "components/Title";
 import { getAllCondition } from "lib/apis";
+import { ECardTitles } from "lib/enum";
 import cx from "styles/Main.module.scss";
 
 interface GetAllCondition {
@@ -38,15 +38,41 @@ interface GetAllCondition {
 }
 
 const Main = ({ data }: { data: GetAllCondition }) => {
-  console.log(data);
+  const {
+    TotalCase,
+    TotalCaseBefore,
+    TodayRecovered,
+    TodayDeath,
+    TotalDeath,
+    NowCase,
+    TotalRecovered,
+    checkingCounter,
+  } = data;
   return (
     <div className={cx.Main}>
-      <Title
-        content={`${data.TotalCase} 명`}
-        number={`+ ${data.TotalCaseBefore}`}
-      />
-      <Card title="완치자" subTitle="+ 1596" content="180,719 명" />
-      {/* <Button content="대구" active={false} /> */}
+      <Title content={`${TotalCase} 명`} number={`+ ${TotalCaseBefore}`} />
+      <div className={cx.CardWrap}>
+        <Card
+          title={ECardTitles["TotalRecovered" as keyof typeof ECardTitles]}
+          subTitle={`+ ${TodayRecovered}`}
+          content={`${TotalRecovered} 명`}
+        />
+        <Card
+          title={ECardTitles["TotalDeath" as keyof typeof ECardTitles]}
+          subTitle={`+ ${TodayDeath}`}
+          content={`${TotalDeath} 명`}
+        />
+      </div>
+      <div className={cx.CardWrap}>
+        <Card
+          title={ECardTitles["NowCase" as keyof typeof ECardTitles]}
+          content={`${NowCase} 명`}
+        />
+        <Card
+          title={ECardTitles["checkingCounter" as keyof typeof ECardTitles]}
+          content={`${checkingCounter} 명`}
+        />
+      </div>
     </div>
   );
 };
