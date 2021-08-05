@@ -1,0 +1,37 @@
+.Card {
+  width: 632px;
+  height: 212px;
+  border-radius: 7px;
+  background-color: white;
+  padding: 20px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.Top {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.Title {
+  display: inline-block;
+  flex-direction: row;
+  color: #1F39B4;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+.SubTitle {
+  display: inline-block;
+  color: #7E7E7E;
+  font-size: 14px;
+  font-weight: bold;
+  align-self: flex-end;
+  margin-left: 6px;
+}
+
+.Content {
+  font-size: 44px;
+  font-weight: bolder;
+  color: black;
+}

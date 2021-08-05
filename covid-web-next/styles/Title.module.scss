@@ -1,10 +1,11 @@
 .Title {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
 }
 
 .Top {
   display: flex;
+  line-height: 46px;
 }
 
 .TopTitle {
@@ -25,6 +26,7 @@
   color: #000000;
   font-size: 96px;
   font-weight: bold;
+  line-height: 100px;
 }
 
 .Number {
