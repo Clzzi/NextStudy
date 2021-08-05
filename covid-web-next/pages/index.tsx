@@ -5,7 +5,7 @@ import { ECardTitles } from "lib/enum";
 import { GetAllCondition } from "lib/types";
 import cx from "styles/Main.module.scss";
 
-const Main = ({ data }: { data: GetAllCondition }) => {
+const Main = ({ data }: { data: GetAllCondition }): JSX.Element => {
   const {
     TotalCase,
     TotalCaseBefore,
@@ -19,7 +19,7 @@ const Main = ({ data }: { data: GetAllCondition }) => {
   return (
     <div className={cx.Main}>
       <Title content={`${TotalCase} 명`} number={`+ ${TotalCaseBefore}`} />
-      <div className={cx.CardWrap}>
+      <div className={cx.FirstCardWrap}>
         <Card
           title={ECardTitles["TotalRecovered" as keyof typeof ECardTitles]}
           subTitle={`+ ${TodayRecovered}`}

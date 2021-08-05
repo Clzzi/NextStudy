@@ -8,3 +8,11 @@ export enum ECardTitles {
   percentage = "발생률",
   Donate = "후원",
 }
+
+export enum ECountryToEn {
+  서울 = "seoul",
+  경기 = "gyeonggi",
+  대구 = "daegu",
+  부산 = "busan",
+  제주 = "jeju",
+}

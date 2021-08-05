@@ -4,6 +4,7 @@ import Link from "next/Link";
 interface ButtonProps {
   content: string;
   active: boolean;
+  onClick: () => void;
 }
 
 const Button = (ButtonProps: ButtonProps): JSX.Element => {
@@ -11,19 +12,11 @@ const Button = (ButtonProps: ButtonProps): JSX.Element => {
     <>
       {ButtonProps.active ? (
         <div className={cx.ButtonActive}>
-          <div className={cx.ContentActive}>
-            <Link href={`/country/${ButtonProps.content}`}>
-              <a>{ButtonProps.content}</a>
-            </Link>
-          </div>
+          <div className={cx.ContentActive}>{ButtonProps.content}</div>
         </div>
       ) : (
-        <div className={cx.Button}>
-          <div className={cx.Content}>
-            <Link href={`/country/${ButtonProps.content}`}>
-              <a>{ButtonProps.content}</a>
-            </Link>
-          </div>
+        <div className={cx.Button} onClick={ButtonProps.onClick}>
+          <div className={cx.Content}>{ButtonProps.content}</div>
         </div>
       )}
     </>

@@ -15,12 +15,8 @@
   display: inline-flex;
   font-size: 28px;
   font-weight: normal;
-
-  & > a {
-    color: #1f39b4;
-
-    line-height: 46px;
-  }
+  color: #1f39b4;
+  line-height: 46px;
 }
 
 .ButtonActive {
@@ -40,9 +36,6 @@
   display: inline-flex;
   font-size: 28px;
   font-weight: normal;
-
-  & > a {
-    color: white;
-    line-height: 46px;
-  }
+  color: white;
+  line-height: 46px;
 }

@@ -30,3 +30,38 @@ export interface GetAllCondition {
   updateTime: string;
   resultMessage: string;
 }
+
+interface Country {
+  countryName: string;
+  newCase: string;
+  totalCase: string;
+  recovered: string;
+  death: string;
+  percentage: string;
+  newCcase: string;
+  newFcase: string;
+}
+
+export interface GetCountryCondition {
+  resultCode: string;
+  resultMessage: string;
+  korea: Country;
+  seoul: Country;
+  busan: Country;
+  daegu: Country;
+  incheon: Country;
+  gwangju: Country;
+  daejeon: Country;
+  ulsan: Country;
+  sejong: Country;
+  gyeonggi: Country;
+  gangwon: Country;
+  chungbuk: Country;
+  chungnam: Country;
+  jeonbuk: Country;
+  jeonnam: Country;
+  gyeongbuk: Country;
+  gyeongnam: Country;
+  jeju: Country;
+  quarantine: Country;
+}
