@@ -1,18 +1,34 @@
 .Title {
-  
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .Top {
+  display: flex;
 }
 
 .TopTitle {
+  font-size: 3rem;
+  color: #000000;
+  display: inline-block;
 }
 
 .TopSubTitle {
+  font-size: 3rem;
+  color: #1f39b4;
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 12px;
 }
 
 .People {
+  color: #000000;
+  font-size: 96px;
+  font-weight: bold;
 }
 
 .Number {
+  color: #7e7e7e;
+  font-weight: bold;
+  font-size: 36px;
 }

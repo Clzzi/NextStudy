@@ -1,7 +1,12 @@
-export default function Home() {
+import Title from "components/Title";
+import cx from 'styles/Main.module.scss';
+
+const Main = () => {
   return (
-<div>
-  heelo
-</div>
-  )
-}
+    <div className={cx.Main} >
+      <Title />
+    </div>
+  );
+};
+
+export default Main;

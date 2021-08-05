@@ -6,9 +6,8 @@ import Nav from "components/Nav";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <Nav>
-        <Component {...pageProps} />
-      </Nav>
+      <Nav />
+      <Component {...pageProps} />
     </RecoilRoot>
   );
 }

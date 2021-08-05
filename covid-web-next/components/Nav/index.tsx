@@ -2,9 +2,8 @@ import { FC } from "react";
 import cx from "styles/Nav.module.scss";
 import Link from "next/Link";
 
-const Nav: FC = ({ children }) => {
+const Nav: FC = () => {
   return (
-    <div className={cx.Wrap}>
       <div className={cx.Nav}>
         <div className={cx.Top}>
           <div className={cx.Title}>COVID</div>
@@ -31,8 +30,6 @@ const Nav: FC = ({ children }) => {
           </div>
         </div>
       </div>
-      {children}
-    </div>
   );
 };
 
