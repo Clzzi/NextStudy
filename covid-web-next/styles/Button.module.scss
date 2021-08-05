@@ -1,0 +1,48 @@
+.Button {
+  width: 176px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2.5px solid #1f39b4;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.Content {
+  display: inline-flex;
+  font-size: 28px;
+  font-weight: normal;
+
+  & > a {
+    color: #1f39b4;
+
+    line-height: 46px;
+  }
+}
+
+.ButtonActive {
+  width: 176px;
+  height: 50px;
+  border-radius: 999px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #1f39b4;
+}
+
+.ContentActive {
+  display: inline-flex;
+  font-size: 28px;
+  font-weight: normal;
+
+  & > a {
+    color: white;
+    line-height: 46px;
+  }
+}
