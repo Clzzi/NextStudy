@@ -1,8 +1,11 @@
 import Card from "components/Card";
 import Title from "components/Title";
 import { getAllCondition } from "lib/apis";
+import { SyncTimeAtom } from "lib/atom";
 import { ECardTitles } from "lib/enum";
 import { GetAllCondition } from "lib/types";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
 import cx from "styles/Main.module.scss";
 
 const Main = ({ data }: { data: GetAllCondition }): JSX.Element => {
@@ -15,7 +18,17 @@ const Main = ({ data }: { data: GetAllCondition }): JSX.Element => {
     NowCase,
     TotalRecovered,
     checkingCounter,
+    updateTime,
   } = data;
+
+  const [time, setTime] = useRecoilState(SyncTimeAtom);
+
+  useEffect(() => {
+    if (updateTime) {
+      setTime(updateTime.slice(23, 34));
+    }
+  }, [updateTime, setTime]);
+
   return (
     <div className={cx.Main}>
       <Title content={`${TotalCase} 명`} number={`+ ${TotalCaseBefore}`} />

@@ -6,6 +6,6 @@ export const ButtonAtom = atom<string>({
 });
 
 export const SyncTimeAtom = atom<string>({
-  key: 'SyncTimeAtom',
-  default
-})
+  key: "SyncTimeAtom",
+  default: "0.0.00시 동기화",
+});

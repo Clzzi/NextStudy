@@ -1,15 +1,18 @@
 import { FC } from "react";
 import cx from "styles/Nav.module.scss";
 import Link from "next/Link";
+import { SyncTimeAtom } from "lib/atom";
+import { useRecoilState } from "recoil";
 
 const Nav: FC = () => {
+  const [time, setTime] = useRecoilState(SyncTimeAtom);
   return (
     <div className={cx.Nav}>
       <div className={cx.Top}>
         <div className={cx.Title}>COVID</div>
       </div>
       <div className={cx.Content}>
-        <div className={cx.ContentTopTitle}>8.5.00시 동기화</div>
+        <div className={cx.ContentTopTitle}>{`${time} 동기화`}</div>
         <ul className={cx.ContentLists}>
           <li className={cx.ContentList}>
             <Link href="/">
