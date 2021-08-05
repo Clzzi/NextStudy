@@ -1,4 +1,78 @@
+.Wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 .Nav {
+  height: 100vh;
+  width: 316px;
+  background-color: #1f39b4;
+  display: inline-block;
+}
 
-  
+.Top {
+  width: 316px;
+  height: 190px;
+  border-bottom: 4px solid white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.Title {
+  font-size: 3rem;
+  color: white;
+  display: inline-block;
+}
+
+.Content {
+  position: relative;
+  width: 316px;
+  height: calc(100vh - 190px);
+}
+
+.ContentTopTitle {
+  display: block;
+  font-size: 14px;
+  float: right;
+  margin: 4px;
+  color: white;
+}
+
+.ContentLists {
+  transition: 0.5s;
+  display: inline-flex;
+  flex-direction: column;
+  color: white;
+  margin: 99px 43px 0px 70px;
+}
+
+.ContentList {
+  transition: 0.5s;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 24px;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  &:hover {
+    transition: 0.5s;
+    border-bottom: 2px solid white;
+  }
+}
+
+.Bottom {
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  margin-bottom: 4px;
 }
