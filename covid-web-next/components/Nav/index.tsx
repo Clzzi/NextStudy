@@ -2,6 +2,7 @@ import { FC } from "react";
 import cx from "styles/Nav.module.scss";
 import Link from "next/Link";
 import { SyncTimeAtom } from "lib/atom";
+import FadeIn from "react-fade-in";
 import { useRecoilState } from "recoil";
 
 const Nav: FC = () => {
@@ -14,16 +15,18 @@ const Nav: FC = () => {
       <div className={cx.Content}>
         <div className={cx.ContentTopTitle}>{`${time} 동기화`}</div>
         <ul className={cx.ContentLists}>
-          <li className={cx.ContentList}>
-            <Link href="/">
-              <a>국내 총 현황</a>
-            </Link>
-          </li>
-          <li className={cx.ContentList}>
-            <Link href="/country">
-              <a>국내 시도별 현황</a>
-            </Link>
-          </li>
+          <FadeIn>
+            <li className={cx.ContentList}>
+              <Link href="/">
+                <a>국내 총 현황</a>
+              </Link>
+            </li>
+            <li className={cx.ContentList}>
+              <Link href="/country">
+                <a>국내 시도별 현황</a>
+              </Link>
+            </li>
+          </FadeIn>
         </ul>
         <div className={cx.Bottom}>
           Created By{" "}

@@ -6,6 +6,7 @@ import { ECardTitles } from "lib/enum";
 import { GetAllCondition } from "lib/types";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
+import FadeIn from "react-fade-in";
 import cx from "styles/Main.module.scss";
 
 const Main = ({ data }: { data: GetAllCondition }): JSX.Element => {
@@ -30,31 +31,35 @@ const Main = ({ data }: { data: GetAllCondition }): JSX.Element => {
   }, [updateTime, setTime]);
 
   return (
-    <div className={cx.Main}>
-      <Title content={`${TotalCase} 명`} number={`+ ${TotalCaseBefore}`} />
-      <div className={cx.FirstCardWrap}>
-        <Card
-          title={ECardTitles["TotalRecovered" as keyof typeof ECardTitles]}
-          subTitle={`+ ${TodayRecovered}`}
-          content={`${TotalRecovered} 명`}
-        />
-        <Card
-          title={ECardTitles["TotalDeath" as keyof typeof ECardTitles]}
-          subTitle={`+ ${TodayDeath}`}
-          content={`${TotalDeath} 명`}
-        />
+    <FadeIn>
+      <div className={cx.Main}>
+        <Title content={`${TotalCase} 명`} number={`+ ${TotalCaseBefore}`} />
+        <FadeIn>
+          <div className={cx.FirstCardWrap}>
+            <Card
+              title={ECardTitles["TotalRecovered" as keyof typeof ECardTitles]}
+              subTitle={`+ ${TodayRecovered}`}
+              content={`${TotalRecovered} 명`}
+            />
+            <Card
+              title={ECardTitles["TotalDeath" as keyof typeof ECardTitles]}
+              subTitle={`+ ${TodayDeath}`}
+              content={`${TotalDeath} 명`}
+            />
+          </div>
+          <div className={cx.CardWrap}>
+            <Card
+              title={ECardTitles["NowCase" as keyof typeof ECardTitles]}
+              content={`${NowCase} 명`}
+            />
+            <Card
+              title={ECardTitles["checkingCounter" as keyof typeof ECardTitles]}
+              content={`${checkingCounter} 명`}
+            />
+          </div>
+        </FadeIn>
       </div>
-      <div className={cx.CardWrap}>
-        <Card
-          title={ECardTitles["NowCase" as keyof typeof ECardTitles]}
-          content={`${NowCase} 명`}
-        />
-        <Card
-          title={ECardTitles["checkingCounter" as keyof typeof ECardTitles]}
-          content={`${checkingCounter} 명`}
-        />
-      </div>
-    </div>
+    </FadeIn>
   );
 };
 

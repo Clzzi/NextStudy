@@ -6,6 +6,7 @@ import { ButtonAtom } from "lib/atom";
 import { ECardTitles, ECountryToEn } from "lib/enum";
 import { GetCountryCondition } from "lib/types";
 import { useRecoilState } from "recoil";
+import FadeIn from "react-fade-in";
 import cx from "styles/Country.module.scss";
 
 const Country = ({ data }: { data: GetCountryCondition }): JSX.Element => {
@@ -17,28 +18,34 @@ const Country = ({ data }: { data: GetCountryCondition }): JSX.Element => {
   return (
     <div className={cx.Country}>
       <ButtonLists />
-      <Title content={content} country={value} number={`+ ${newCase}`} />
-      <div className={cx.CardWrap}>
-        <Card
-          title={ECardTitles["recovered" as keyof typeof ECardTitles]}
-          subTitle={`+ ${data[country].recovered}`}
-          content={`${data[country].newCase} 명`}
+      <FadeIn>
+        <Title
+          content={`${content} 명`}
+          country={value}
+          number={`+ ${newCase}`}
         />
-        <Card
-          title={ECardTitles["death" as keyof typeof ECardTitles]}
-          content={`${data[country].death} 명`}
-        />
-      </div>
-      <div className={cx.CardWrap}>
-        <Card
-          title={ECardTitles["percentage" as keyof typeof ECardTitles]}
-          content={`${data[country].percentage} %`}
-        />
-        <Card
-          title={ECardTitles["Donate" as keyof typeof ECardTitles]}
-          content={`대구 508139166662`}
-        />
-      </div>
+        <div className={cx.CardWrap}>
+          <Card
+            title={ECardTitles["recovered" as keyof typeof ECardTitles]}
+            subTitle={`+ ${data[country].recovered}`}
+            content={`${data[country].newCase} 명`}
+          />
+          <Card
+            title={ECardTitles["death" as keyof typeof ECardTitles]}
+            content={`${data[country].death} 명`}
+          />
+        </div>
+        <div className={cx.CardWrap}>
+          <Card
+            title={ECardTitles["percentage" as keyof typeof ECardTitles]}
+            content={`${data[country].percentage} %`}
+          />
+          <Card
+            title={ECardTitles["Donate" as keyof typeof ECardTitles]}
+            content={`대구 508139166662`}
+          />
+        </div>
+      </FadeIn>
     </div>
   );
 };
