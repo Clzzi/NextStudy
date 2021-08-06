@@ -1,5 +1,4 @@
 import cx from "styles/Title.module.scss";
-
 interface TitleProps {
   country?: string;
   content: string;

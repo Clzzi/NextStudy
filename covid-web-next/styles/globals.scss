@@ -37,7 +37,11 @@ a:visited {
   color: white;
   text-decoration: none;
 }
+a:hover {
+  color: none;
+  text-decoration: none;
 
+}
 ol,
 ul {
   list-style: none;

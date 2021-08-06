@@ -46,16 +46,11 @@
 }
 
 .ContentList {
-  transition: 0.5s;
   cursor: pointer;
   display: inline-flex;
   font-size: 24px;
   padding-bottom: 6px;
   margin-bottom: 8px;
-  &:hover {
-    transition: 0.5s;
-    border-bottom: 2px solid white;
-  }
 }
 
 .Bottom {
