@@ -1,6 +1,6 @@
 import { FC } from "react";
 import cx from "styles/Nav.module.scss";
-import Link from "next/Link";
+import Link from "next/link";
 import { SyncTimeAtom } from "lib/atom";
 import FadeIn from "react-fade-in";
 import { useRecoilState } from "recoil";
