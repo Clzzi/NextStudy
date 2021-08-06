@@ -1,5 +1,4 @@
 import cx from "styles/Button.module.scss";
-import Link from "next/Link";
 
 interface ButtonProps {
   content: string;
